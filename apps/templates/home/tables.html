@@ -6,7 +6,10 @@
 {% block stylesheets %}{% endblock stylesheets %}
 
 {% block content %}
-<h1>hell{{ patient.first_name }}</h1>
+<h1></h1>
+{% for patient in patient %}
+{{patient.email}}
+{% endfor %}
     <div class="container-fluid py-4">
 
       <div class="row">

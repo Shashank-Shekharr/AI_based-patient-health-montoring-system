@@ -22,7 +22,7 @@ def index(request):
     return HttpResponse(html_template.render(context, request))
 
 
-@login_required(login_url="/login/")
+
 def pages(request):
     pulsedata=[75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90]
     oxidata=[ 96, 97, 98, 99,100]
@@ -32,7 +32,7 @@ def pages(request):
     l3=[l3,l3,l3,l3,l3,l3,l3,l3,l3,l3,l3,l3,l3,l3,l3]
     #context = super().get_context_data(**kwargs)
     #context["qs"] = Editors.objects.all()
-    patients =Patient.objects.all()
+    patients = Patient.objects.all().order_by('id')[:50]
     mydata = Patient.objects.all().values()
 
     context={"pulse":l2,"oxi":l,"tempa":l3,"patient":mydata}
