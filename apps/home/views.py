@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
-from apps.home.models import chart1,chart2
+from apps.home.models import chart1,chart2 ,Patient
 from django.shortcuts import render
 from django.views.generic import TemplateView
 import random
@@ -32,7 +32,8 @@ def pages(request):
     l3=[l3,l3,l3,l3,l3,l3,l3,l3,l3,l3,l3,l3,l3,l3,l3]
     #context = super().get_context_data(**kwargs)
     #context["qs"] = Editors.objects.all()
-    context={"pulse":l2,"oxi":l,"tempa":l3}
+    patients =Patient.objects.all()
+    context={"pulse":l2,"oxi":l,"tempa":l3,"patient":patients}
     # All resource paths end in .html.
     # Pick out the html file name from the url. And load that template.
     try:
@@ -54,3 +55,4 @@ def pages(request):
     except:
         html_template = loader.get_template('home/page-500.html')
         return HttpResponse(html_template.render(context, request))
+    
