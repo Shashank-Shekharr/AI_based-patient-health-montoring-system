@@ -20,4 +20,12 @@ class chart2(models.Model):
     pulse = models.FloatField(default=0)
     release_date2 = models.DateField()
 
-    
+class Patient(models.Model):
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    email = models.EmailField()
+    phone_number = models.CharField(max_length=20)
+    address = models.TextField()
+    date_of_birth = models.DateField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
