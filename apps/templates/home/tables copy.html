@@ -24,18 +24,21 @@
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Department</th>
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status
                   </th>
-                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date of 
-                    Admit
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"> <a href="/tables.html">Date of Admit</href>
                   </th>
                   <th class="text-secondary opacity-7"></th>
                 </tr>
               </thead>
               <tbody>
-                {% for patient in patient %}
+                
+                <h1>NO Patient found</h1>
+                {% for patient in patigent %}
                 <tr>
+                  <h1>NO Patient found</h1>
                   <td>
                     <div class="d-flex px-2 py-1">
                       <div>
+
                         <img src="{{ ASSETS_ROOT }}/img/team-2.jpg" class="avatar avatar-sm me-3" alt="user1">
                       </div>
                       <div class="d-flex flex-column justify-content-center">
