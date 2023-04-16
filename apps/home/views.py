@@ -36,9 +36,8 @@ def pages(request):
     l4=[l3,l3,l3,l3,l3,l3,l3,l3,l3,l3,l3,l3,l3,l3,l3]
     #context = super().get_context_data(**kwargs)
     #context["qs"] = Editors.objects.all()
-    patients =Patient.objects.all().values()
-    
-    context={"pulse":l2,"oxi":l,"tempa":l4,"patient":patients}
+    patients =Patient.objects.all()
+    context={"pulse":l2,"oxi":l,"tempa":l3,"patient":patients}
     # All resource paths end in .html.
     # Pick out the html file name from the url. And load that template.
     try:
